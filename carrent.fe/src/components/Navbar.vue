@@ -29,7 +29,7 @@
       </v-navigation-drawer>
     </v-layout>
     <v-toolbar color="white"
-               flat
+               flat fixed
                class="border-bottom">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"
                            class="hidden-md-and-up standard-color"></v-toolbar-side-icon>
@@ -73,7 +73,7 @@ export default {
       menuItems: [
         { title: "Ponuka", icon: "directions_car" },
         { title: "Kto sme", icon: "fingerprint" },
-        { title: "Podmienky", icon: "warning" },
+        { title: "Podmienky", icon: "assignment_turned_in" },
         { title: "Kontakt", icon: "phone" }
       ],
       drawer: null
@@ -83,7 +83,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 .menu-item {
   font-family: Intro;
   font-size: 1.3em;
@@ -99,10 +99,6 @@ export default {
 
 .border-bottom {
   border-bottom: 1px solid black;
-}
-
-.standard-color {
-  color: rgb(197, 18, 48) !important;
 }
 </style>
 
