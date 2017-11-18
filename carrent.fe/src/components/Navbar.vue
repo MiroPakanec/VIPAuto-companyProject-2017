@@ -3,7 +3,7 @@
     <v-layout>
       <v-navigation-drawer temporary
                            v-model="drawer"
-                           light
+                           light fixed
                            absolute>
         <v-list class="pa-1">
           <v-list-tile avatar>
@@ -31,7 +31,7 @@
     <v-toolbar color="white"
                flat fixed
                class="border-bottom">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"
+      <v-toolbar-side-icon @click.stop="sideIconClick()"
                            class="hidden-md-and-up standard-color"></v-toolbar-side-icon>
       <v-layout justify-center
                 fill-height
@@ -78,6 +78,12 @@ export default {
       ],
       drawer: null
     };
+  },
+  methods:{
+    sideIconClick(){
+
+      this.drawer = !this.drawer;
+    }
   }
 };
 </script>
