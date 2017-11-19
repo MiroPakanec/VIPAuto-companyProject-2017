@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/components/Home'
-import Catalogue from '@/components/Catalogue'
+import KtoSme from '@/components/KtoSme'
+import Ponuka from '@/components/Ponuka'
+import Podmienky from '@/components/Podmienky'
+import Kontakt from '@/components/Kontakt'
 
 Vue.use(Router)
 
@@ -10,17 +12,27 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "/domov",
+      redirect: "/kto-sme",
     },
     {
-      path: "/domov",
-      name: "Home",
-      component: Home
+      path: "/kto-sme",
+      name: "KtoSme",
+      component: KtoSme
     },
     {
       path: "/ponuka",
-      name: "Catalogue",
-      component: Catalogue
-    }
+      name: "Ponuka",
+      component: Ponuka
+    },
+    {
+      path: "/podmienky",
+      name: "Podmienky",
+      component: Podmienky
+    },
+    {
+      path: "/kontakt",
+      name: "Kontakt",
+      component: Kontakt
+    },
   ]
 })

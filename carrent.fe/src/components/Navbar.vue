@@ -3,7 +3,8 @@
     <v-layout>
       <v-navigation-drawer temporary
                            v-model="drawer"
-                           light fixed
+                           light
+                           fixed
                            absolute>
         <v-list class="pa-1">
           <v-list-tile avatar>
@@ -17,7 +18,9 @@
           <v-divider></v-divider>
           <v-list-tile v-for="item in menuItems"
                        :key="item.title"
-                       @click="''" class="menu-item">
+                       @click="''"
+                       :to="item.link"
+                       class="menu-item">
             <v-list-tile-action>
               <v-icon class="standard-color">{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -29,7 +32,8 @@
       </v-navigation-drawer>
     </v-layout>
     <v-toolbar color="white"
-               flat fixed
+               flat
+               fixed
                class="border-bottom">
       <v-toolbar-side-icon @click.stop="sideIconClick()"
                            class="hidden-md-and-up standard-color"></v-toolbar-side-icon>
@@ -46,6 +50,7 @@
                 :key="item.title">
           <v-btn block
                  flat
+                 :to="item.link"
                  class="fill ver-align-center menu-item standard-color">
             <v-layout row
                       wrap>
@@ -71,17 +76,16 @@ export default {
   data() {
     return {
       menuItems: [
-        { title: "Ponuka", icon: "directions_car" },
-        { title: "Kto sme", icon: "fingerprint" },
-        { title: "Podmienky", icon: "assignment_turned_in" },
-        { title: "Kontakt", icon: "phone" }
+        { title: "Kto sme", icon: "fingerprint", link: "/kto-sme" },
+        { title: "Ponuka", icon: "directions_car", link: "/ponuka" },
+        { title: "Podmienky", icon: "assignment_turned_in", link: "/podmienky" },
+        { title: "Kontakt", icon: "phone", link: "/kontakt" }
       ],
       drawer: null
     };
   },
-  methods:{
-    sideIconClick(){
-
+  methods: {
+    sideIconClick() {
       this.drawer = !this.drawer;
     }
   }
@@ -93,7 +97,6 @@ export default {
 .menu-item {
   font-family: Intro;
   font-size: 1.3em;
-  
 }
 
 .fill {

@@ -3,6 +3,7 @@
     <nav-bar></nav-bar>
     <main>
       <router-view></router-view>
+      
     </main>
   </v-app>
 </template>
@@ -27,24 +28,31 @@ export default {
   src: url("./stylus/fonts/Raleway-Regular.ttf");
 }
 
+.main-container {
+  width: 100%;
+  max-width: 1500px;
+  padding: 0;
+  margin: 0;
+}
+
 .standard-color {
   color: rgb(197, 18, 48) !important;
 }
 
 .standard-background{
-  background-color: rgb(197, 18, 48);
+  background-color: rgb(197, 18, 48) !important;
 }
 
 .standard-text {
   font-family: Raleway;
   font-size: 1em;
-  color:rgb(50, 50, 50);
+  color:rgb(50, 50, 50) !important;
 }
 
 .standard-text-white {
   font-family: Raleway;
   font-size: 1em;
-  color:rgb(255, 255, 255);
+  color:rgb(255, 255, 255) !important;
 }
 
 .header-text {
@@ -60,5 +68,23 @@ export default {
 
 .header-text-small {
   font-size: 1.5em;
+}
+
+.header-text-extrasmall {
+  font-size: 1.2em;
+}
+
+.light-link {
+  color: white;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.no-padding{
+  padding: 0 !important; 
+}
+
+.no-margin{
+  margin: 0 !important; 
 }
 </style>

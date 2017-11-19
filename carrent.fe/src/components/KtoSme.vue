@@ -1,12 +1,13 @@
 <template>
-  <div class="container">
+  <div class="main-container"
+       style="margin-top: 55px;">
     <header class="background">
       <div class="car"
            v-bind:style="getCarStyle"></div>
       <div class="title"
            v-bind:style="getTitleStyle"></div>
     </header>
-    <v-container text-xs-center>
+    <v-container fluid text-xs-center class="no-padding">
       <v-layout row
                 wrap
                 mt-5>
@@ -65,88 +66,26 @@
                 class="standard-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. A praesentium, facere animi itaque odit tempora laborum maxime temporibus ut libero illum ad labore neque. Ad earum quam repellendus voluptatibus omnis?
         </v-flex>
+
       </v-layout>
-      <v-layout mt-5
-                class="standard-background">
-        <v-flex xs12>
-          <v-layout row
-                    wrap
-                    mt-5
-                    standard-text-white>
-            <v-flex xs10
-                    offset-xs1
-                    md4
-                    offset-md0
-                    mb-5>
-              <v-layout row>
-                <v-flex xs12>
-                  <v-icon dark
-                          large>public</v-icon>
-                  <h1 class="header-text-white header-text-small"> Sociálne siete</h1>
-                </v-flex>
-              </v-layout>
-              <v-layout row
-                        mt-4>
-                <v-flex xs12>
-                  <p class="standard-text-white ">Sledujte aktuálne dianie v našej spoločnosti.<br>Sme na
-                    <a class="light-link">facebook</a> -u!</p>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-            <v-flex xs10
-                    offset-xs1
-                    md4
-                    offset-md0
-                    mb-5>
-              <v-layout row>
-                <v-flex xs12>
-                  <v-icon dark
-                          large>assignment_turned_in</v-icon>
-                  <h1 class="header-text-white header-text-small"> Podmienky</h1>
-                </v-flex>
-              </v-layout>
-              <v-layout row
-                        mt-4>
-                <v-flex xs12>
-                  <p class="standard-text-white ">Je dôležité, aby ste vedeli o podmienkach a pravidlách spoločnosti VIP Auto.<br>Nájdete ich
-                    <a class="light-link">TU</a>.</p>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-            <v-flex xs10
-                    offset-xs1
-                    md4
-                    offset-md0
-                    mb-5>
-              <v-layout row>
-                <v-flex xs12>
-                  <v-icon dark
-                          large>phone</v-icon>
-                  <h1 class="header-text-white header-text-small"> Kontakt</h1>
-                </v-flex>
-              </v-layout>
-              <v-layout row
-                        mt-4>
-                <v-flex xs12>
-                  <p class="standard-text-white ">Potrebujete poradiť?<br>Neváhajte a
-                    <a class="light-link">Kontaktujte</a> nás!
-                  </p>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-          </v-layout>
-        </v-flex>
-      </v-layout>
+      <page-footer></page-footer>
+
     </v-container>
+
   </div>
 </template>
 
 <script>
+import Footer from "./Footer.vue";
+
 export default {
   data() {
     return {
       scroll: 0
     };
+  },
+  components: {
+    "page-footer": Footer
   },
   computed: {
     getTitleStyle() {
@@ -184,14 +123,6 @@ Number.prototype.map = function(in_min, in_max, out_min, out_max) {
 
 
 <style scoped>
-.container {
-  width: 100%;
-  max-width: 1500px;
-  padding: 0;
-  margin: 0;
-  margin-top: 55px;
-}
-
 /* paralax */
 .background {
   position: relative;
@@ -227,18 +158,4 @@ Number.prototype.map = function(in_min, in_max, out_min, out_max) {
   top: -45%;
 }
 
-.scroll-buttom-container {
-  width: 100px;
-
-  position: absolute;
-  left: 50%;
-  top: 90%;
-  margin-left: -50px;
-}
-
-.light-link {
-  color: white;
-  font-weight: bolder;
-  text-decoration: underline;
-}
 </style>
