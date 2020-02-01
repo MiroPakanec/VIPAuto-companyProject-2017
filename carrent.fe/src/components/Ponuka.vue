@@ -1,6 +1,9 @@
 <template>
     <div class="main-container">
-        <v-container text-xs-center
+        <v-container fluid
+                     text-xs-center
+                     class="no-padding"
+                     text-xs-center
                      mt-4>
             <v-layout row
                       wrap
@@ -32,50 +35,32 @@
                     <hr>
                 </v-flex>
             </v-layout>
-            <auto :car="car" ></auto>
+            <auto :car="cars[0]"></auto>
+            <auto :car="cars[1]"></auto>
+            <auto :car="cars[2]"></auto>
+            <auto :car="cars[3]"></auto>
+
+            <page-footer></page-footer>
         </v-container>
     </div>
 </template>
 
 <script>
-
-import Auto from './Auto'
+import Auto from "./Auto";
+import Footer from "./Footer";
 
 export default {
   data() {
-    return {
-      car: {
-        id: 1,
-        title: "Supermodel",
-        stars: 4,
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iure laboriosam numquam molestiae libero, excepturi ducimus sequi quos.",
-        attributes: [
-          { name: "Model", value: "Something x3.14" },
-          { name: "Typ", value: "Automat" },
-          { name: "Neviem", value: "Neviem" },
-          { name: "Neviem2", value: "Nieco ine" }
-        ],
-        price: 20,
-        pictures: [
-          { src: "/static/cars/sample-car.png" },
-          { src: "/static/cars/sample-car.png" },
-          { src: "/static/cars/sample-car.png" },
-          { src: "/static/cars/sample-car.png" },
-          { src: "/static/cars/sample-car.png" }
-        ],
-        visiblePriceList: false,
-        prices: [
-          { title: "1-2 dni", price: "40 eur/ den" },
-          { title: "2-7 dni", price: "35 eur/ den" },
-          { title: "7-14 dni", price: "30 eur/ den" },
-          { title: "14-30 dni", price: "20 eur/ den" }
-        ]
-      }
-    };
+    return {};
   },
-  components:{
-      'auto' : Auto
+  computed: {
+    cars() {
+      return this.$store.state.cars;
+    }
+  },
+  components: {
+    auto: Auto,
+    "page-footer": Footer
   }
 };
 </script>

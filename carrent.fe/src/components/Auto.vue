@@ -75,7 +75,7 @@
                                                     offset-sm0
                                                     offset-xs1
                                                     md5
-                                                    offset-md1>{{item.price}}
+                                                    offset-md1>{{item.price}} eur / den
                                             </v-flex>
                                         </v-layout>
                                     </v-flex>
@@ -107,7 +107,8 @@
                         offset-md1>
                     <v-btn block
                            flat
-                           class="standard-background standard-text-white ">Objednať</v-btn>
+                           :to="'objednavka/' + car.id"
+                           class="standard-background standard-text-white">Objednať</v-btn>
                 </v-flex>
             </v-layout>
             <v-layout row
@@ -118,6 +119,7 @@
                     <hr>
                 </v-flex>
             </v-layout>
+            
         </v-container>
     </v-card>
 </template>

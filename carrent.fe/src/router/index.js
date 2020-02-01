@@ -5,6 +5,8 @@ import KtoSme from '@/components/KtoSme'
 import Ponuka from '@/components/Ponuka'
 import Podmienky from '@/components/Podmienky'
 import Kontakt from '@/components/Kontakt'
+import Objednavka from '@/components/Objednavka'
+import ObjednavkaNotFound from '@/components/ObjednavkaNotFound'
 
 Vue.use(Router)
 
@@ -33,6 +35,17 @@ export default new Router({
       path: "/kontakt",
       name: "Kontakt",
       component: Kontakt
+    },
+    {
+      path: "/objednavka/:id",
+      name: "Objednavka",
+      component: Objednavka,
+      props: true
+    },
+    {
+      path: "/chyba-objednavky",
+      name: "ObjednavkaNotFound",
+      component: ObjednavkaNotFound
     },
   ]
 })

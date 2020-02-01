@@ -55,6 +55,10 @@ export default {
   color:rgb(255, 255, 255) !important;
 }
 
+.standard-border{
+  border: 1px solid rgb(197, 18, 48);
+}
+
 .header-text {
   font-family: Intro;
   font-size: 2em;
